@@ -1,0 +1,9 @@
+# Ignore virtual environment
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+.env
+*.sqlite3

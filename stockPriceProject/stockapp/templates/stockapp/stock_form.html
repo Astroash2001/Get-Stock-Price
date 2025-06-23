@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Checker</title>
+</head>
+<body>
+    <h1>Enter the company symbol to get Stock price</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name ="symbol" placeholder = ""e.g. AAPL, TSLA, INFY"">
+        <button type="submit">Get Price</button>
+    </form>
+
+    {% if price %}
+        <h2>Current Price of {{symbol}} :${{price}}</h2>
+    {% elif error %}
+        <h2 style = "color:red;">{{error}}</h2>
+    {% endif %}
+</body>
+</html>
